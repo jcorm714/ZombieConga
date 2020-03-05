@@ -15,6 +15,7 @@
 		D78E01AE240F104A0018D732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78E01AC240F104A0018D732 /* LaunchScreen.storyboard */; };
 		D78E01B9240F104A0018D732 /* ZombieCongaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E01B8240F104A0018D732 /* ZombieCongaTests.swift */; };
 		D78E01C4240F104A0018D732 /* ZombieCongaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E01C3240F104A0018D732 /* ZombieCongaUITests.swift */; };
+		D78E01D2240F53B20018D732 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E01D1240F53B20018D732 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D78E01BF240F104A0018D732 /* ZombieCongaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZombieCongaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78E01C3240F104A0018D732 /* ZombieCongaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZombieCongaUITests.swift; sourceTree = "<group>"; };
 		D78E01C5240F104A0018D732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D78E01D1240F53B20018D732 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D78E019C240F10460018D732 /* ZombieConga */ = {
 			isa = PBXGroup;
 			children = (
+				D78E01D1240F53B20018D732 /* Util.swift */,
 				D78E019D240F10460018D732 /* AppDelegate.swift */,
 				D78E01A3240F10460018D732 /* GameScene.swift */,
 				D78E01A5240F10460018D732 /* GameViewController.swift */,
@@ -262,6 +265,7 @@
 				D78E01A4240F10460018D732 /* GameScene.swift in Sources */,
 				D78E01A6240F10460018D732 /* GameViewController.swift in Sources */,
 				D78E019E240F10460018D732 /* AppDelegate.swift in Sources */,
+				D78E01D2240F53B20018D732 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
