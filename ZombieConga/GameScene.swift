@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 
+
 class GameScene: SKScene {
     
     private var label : SKLabelNode?
@@ -21,8 +22,10 @@ class GameScene: SKScene {
     private var shortest: CGFloat = CGFloat(0)
     private let catMove: CGFloat = 480
     let zombieAnimation: SKAction
-    
-    
+    private var lives = 5
+    private var gameOver = false
+    private var trainCount = 0
+    private var audio: AudioPlayer = AudioPlayer(filename: "./Sounds/backgroundMusic.mp3")
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     
@@ -72,6 +75,8 @@ class GameScene: SKScene {
         background.zPosition = -1
         self.addChild(background)
         self.addChild(zombie)
+        
+        audio.play()
 
         //spawn old lady
         run(SKAction.repeatForever(
@@ -87,7 +92,6 @@ class GameScene: SKScene {
                           },
                           SKAction.wait(forDuration: 1.0)])))
         
-        let mySize = background.size
         debugDrawPlayableArea()
     }
     
@@ -170,6 +174,29 @@ class GameScene: SKScene {
         arrivedAtPoint()
         moveTrain()
         
+        
+        //game lost
+        if lives <= 0 && !gameOver{
+            gameOver = true
+            let gameOverScene = GameOverScene(size: size, won: false)
+            gameOverScene.scaleMode = scaleMode
+                       
+            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+            audio.stop()
+            view?.presentScene(gameOverScene, transition: reveal)
+        }
+        
+        //game win
+        if trainCount >= 15 && !gameOver{
+            gameOver = true
+            
+            let gameOverScene = GameOverScene(size: size, won: true)
+            gameOverScene.scaleMode = scaleMode
+            
+            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+            audio.stop()
+            view?.presentScene(gameOverScene, transition: reveal)
+        }
         
     }
     
@@ -280,7 +307,7 @@ class GameScene: SKScene {
         let logMessage = SKAction.run() {
           print("Reached bottom!")
         }
-        let sequence = SKAction.sequence([actionMidMove, logMessage, wait, actionMove])
+//        let sequence = SKAction.sequence([actionMidMove, logMessage, wait, actionMove])
 //        let reverseMid = actionMidMove.reversed()
 //        let reverseMove = actionMove.reversed()
 //        let sequence = SKAction.sequence([
@@ -349,6 +376,7 @@ class GameScene: SKScene {
         cat.removeAllActions()
         cat.setScale(1)
         cat.zRotation = 0.0
+        trainCount += 1
         
         let turnGreen = SKAction.colorize(with: .green, colorBlendFactor: 1, duration: 0.2)
         cat.run(turnGreen, withKey: "green")
@@ -357,6 +385,8 @@ class GameScene: SKScene {
     
     func zombieHit(enemy: SKSpriteNode){
         run(enemyCollisionSound)
+        loseCats()
+        lives -= 1
         enemy.removeFromParent()
     }
     
@@ -407,6 +437,35 @@ class GameScene: SKScene {
                 node.run(moveAction, withKey: "moveTrain")
             }
             targetPos = node.position
+        })
+    }
+    
+    
+    func loseCats(){
+        var loseCount = 0
+        enumerateChildNodes(withName: "train", using: {
+            node, stop in
+            var randomSpot = node.position
+            randomSpot.x += self.random(min: -100, max: 100)
+            randomSpot.y += self.random(min: -100, max: 100)
+            
+            node.name = ""
+            node.run(SKAction.sequence([
+                SKAction.group([
+                    SKAction.rotate(byAngle: CGFloat.pi * 4, duration: 1.0),
+                    SKAction.move(to: randomSpot, duration: 1.0),
+                    SKAction.scale(to: 0, duration: 1)
+                    
+                ]),
+                
+                SKAction.removeFromParent()
+                
+            ]))
+            loseCount += 1
+            self.trainCount = self.trainCount >= 0 ? self.trainCount - 1 : self.trainCount
+            if loseCount >= 2{
+                stop[0] = true
+            }
         })
     }
 
