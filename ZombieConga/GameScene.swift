@@ -168,6 +168,7 @@ class GameScene: SKScene {
         boundsCheckZombie()
         rotate(zombie, velocity)
         arrivedAtPoint()
+        moveTrain()
         
         
     }
@@ -350,7 +351,7 @@ class GameScene: SKScene {
         cat.zRotation = 0.0
         
         let turnGreen = SKAction.colorize(with: .green, colorBlendFactor: 1, duration: 0.2)
-        cat.run(turnGreen)
+        cat.run(turnGreen, withKey: "green")
         
     }
     
@@ -394,13 +395,19 @@ class GameScene: SKScene {
         var targetPos = zombie.position
         enumerateChildNodes(withName: "train", using: {
             node, stop in
-            if !node.hasActions(){
-                let actionDuration = 0.3
-                let offset = CGPoint(x: node.position.x - targetPos.x, y: node.position.y - targetPos.y)
-                let amountToMoveSec = sqrt(Double(offset.x * offset.x + offset.y * offset.y))
-                let amountToMove = actionDuration * offset
-                let moveAction = SKAction.move(by: <#T##CGVector#>, duration: <#T##TimeInterval#>)
+            if node.action(forKey: "moveTrain") == nil{
+                let actionDuration: Float = 0.3
+                let offset = CGPoint(x: targetPos.x - node.position.x, y:  targetPos.y - node.position.y)
+                let length = sqrt(Double(offset.x * offset.x + offset.y * offset.y))
+                let normal = CGPoint(x: Double(offset.x)/length, y: Double(offset.y)/length)
+                let amountToMove = normal * self.catMove
+                let amountToMovePerSec = CGPoint(x: amountToMove.x * CGFloat(actionDuration), y: amountToMove.y * CGFloat(actionDuration))
+                let moveAction = SKAction.moveBy(x: amountToMovePerSec.x, y: amountToMovePerSec.y, duration: Double(actionDuration))
+    
+                node.run(moveAction, withKey: "moveTrain")
             }
+            targetPos = node.position
         })
     }
+
 }

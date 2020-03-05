@@ -16,7 +16,71 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
             endingLineNumber = "187"
-            landmarkName = "arrivedAtPoint()"
+            landmarkName = "move(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "838008AC-8A3A-4E49-BA7D-CA86DA811321"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZombieConga/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "moveTrain()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "838008AC-8A3A-4E49-BA7D-CA86DA811321 - 17b64c3809803b69"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZombieConga.GameScene.moveTrain() -&gt; ()"
+                  moduleName = "ZombieConga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshcormier/Desktop/ZombieConga/ZombieConga/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "395"
+                  endingLineNumber = "395"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "838008AC-8A3A-4E49-BA7D-CA86DA811321 - 5caa1bfa3f0469dd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.SKNode, Swift.UnsafeMutablePointer&lt;ObjectiveC.ObjCBool&gt;) -&gt; () in ZombieConga.GameScene.moveTrain() -&gt; ()"
+                  moduleName = "ZombieConga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshcormier/Desktop/ZombieConga/ZombieConga/GameScene.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "395"
+                  endingLineNumber = "395"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D8842F4-C08B-452B-96E7-AC2C7FD506CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZombieConga/GameScene.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
+            landmarkName = "moveTrain()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
