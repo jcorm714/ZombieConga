@@ -20,6 +20,7 @@
 		D78E01D424117A5F0018D732 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E01D324117A5F0018D732 /* GameOverScene.swift */; };
 		D78E01D6241187FA0018D732 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E01D5241187FA0018D732 /* AudioPlayer.swift */; };
 		D78E01D824118BA40018D732 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E01D724118BA40018D732 /* MainMenuScene.swift */; };
+		D78E01DC2411C5270018D732 /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D78E01DB2411C4F30018D732 /* GLIMSTIC.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D78E01D324117A5F0018D732 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		D78E01D5241187FA0018D732 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D78E01D724118BA40018D732 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		D78E01DB2411C4F30018D732 /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GLIMSTIC.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		D78E0191240F10460018D732 = {
 			isa = PBXGroup;
 			children = (
+				D78E01DB2411C4F30018D732 /* GLIMSTIC.TTF */,
 				6E97035E2410A3B200D1A0E5 /* Sounds */,
 				D78E019C240F10460018D732 /* ZombieConga */,
 				D78E01B7240F104A0018D732 /* ZombieCongaTests */,
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78E01DC2411C5270018D732 /* GLIMSTIC.TTF in Resources */,
 				D78E01A9240F10460018D732 /* Main.storyboard in Resources */,
 				D78E01AB240F104A0018D732 /* Assets.xcassets in Resources */,
 				6E97035F2410A3B200D1A0E5 /* Sounds in Resources */,

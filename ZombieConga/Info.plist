@@ -39,10 +39,16 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
+		<string>Fonts</string>
 		<string></string>
 		<string></string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GLIMSTIC.TTF</string>
+		<string></string>
 	</array>
 </dict>
 </plist>

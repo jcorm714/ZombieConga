@@ -16,5 +16,19 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "GameScene.didMove(to:):GameScene.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "zombie.position">
+            </PersistentString>
+            <PersistentString
+               value = "livesLabel.position">
+            </PersistentString>
+            <PersistentString
+               value = "playableRect.width/2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
